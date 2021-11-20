@@ -96,7 +96,7 @@ public:
                 else if (player->GetTeamId() == TEAM_HORDE && player->GetQuestStatus(13189) == QUEST_STATUS_NONE)//Saurfang's Blessing
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);
                 if (player->GetTeamId() == TEAM_ALLIANCE)
-                    player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
+                    player->TeleportTo(0, -8452.56f, 347.08f, 120.89f, 5.38f);//Stormwind
                 else
                     player->TeleportTo(1, 1920.80f, -4138.36f, 40.57f, 1.64f);//Orgrimmar
                 ObjectAccessor::SaveAllPlayers();//Save
@@ -154,7 +154,7 @@ public:
                 else if (player->GetTeamId() == TEAM_HORDE && player->GetQuestStatus(13189) == QUEST_STATUS_NONE)//Saurfang's Blessing
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);
                 if (player->GetTeamId() == TEAM_ALLIANCE)
-                    player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
+                    player->TeleportTo(0, -8452.56f, 347.08f, 120.89f, 5.38f);//Stormwind
                 else
                     player->TeleportTo(1, 1920.80f, -4138.36f, 40.57f, 1.64f);//Orgrimmar
                 ObjectAccessor::SaveAllPlayers();//Save
