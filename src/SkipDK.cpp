@@ -72,7 +72,9 @@ public:
                 player->EquipNewItem(EQUIPMENT_SLOT_FINGER1, 38671, true);//Valanar's Signet Ring
                 player->AddItem(34658, true);//Original ring1 added to inventory
                 player->EquipNewItem(EQUIPMENT_SLOT_FINGER2, 38672, true);// Keleseth's Signet Ring
-                player->AddItem(38147, true);//Original ring2 added to inventory
+                player->AddItem(38147, true);//Original ring2 added to inventory                
+                player->EquipNewItem(EQUIPMENT_SLOT_NECK, 38662, true);//Bladed Ebon Amulet
+                player->AddItem(34657, true);//Original necklace added to inventory
                 player->AddItem(39320, true);//Sky Darkener's Shroud of Blood
                 player->AddItem(38664, true);//Sky Darkener's Shroud of the Unholy
                 player->AddItem(39322, true);//Shroud of the North Wind
@@ -130,7 +132,9 @@ public:
                 player->EquipNewItem(EQUIPMENT_SLOT_FINGER1, 38671, true);//Valanar's Signet Ring
                 player->AddItem(34658, true);//Original ring1 added to inventory
                 player->EquipNewItem(EQUIPMENT_SLOT_FINGER2, 38672, true);// Keleseth's Signet Ring
-                player->AddItem(38147, true);//Original ring2 added to inventory
+                player->AddItem(38147, true);//Original ring2 added to inventory                
+                player->EquipNewItem(EQUIPMENT_SLOT_NECK, 38662, true);//Bladed Ebon Amulet
+                player->AddItem(34657, true);//Original necklace added to inventory
                 player->AddItem(39320, true);//Sky Darkener's Shroud of Blood
                 player->AddItem(38664, true);//Sky Darkener's Shroud of the Unholy
                 player->AddItem(39322, true);//Shroud of the North Wind
