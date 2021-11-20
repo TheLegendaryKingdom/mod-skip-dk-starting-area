@@ -67,14 +67,10 @@ public:
                 player->AddItem(38669, true);//player->EquipNewItem(EQUIPMENT_SLOT_LEGS, 38669, true);//Engraved Saronite Legplates
                 player->AddItem(38663, true);//player->EquipNewItem(EQUIPMENT_SLOT_SHOULDERS, 38663, true);// Blood-Soaked Saronite Plated Spaulders
                 player->AddItem(38670, true);//player->EquipNewItem(EQUIPMENT_SLOT_FEET, 38670, true);//Greaves of the Slaughter
-                player->EquipNewItem(EQUIPMENT_SLOT_TRINKET1, 38675, true);//Signet of the Dark Brotherhood
-                player->EquipNewItem(EQUIPMENT_SLOT_TRINKET2, 38674, true);//Soul Harvester's Charm
-                player->EquipNewItem(EQUIPMENT_SLOT_FINGER1, 38671, true);//Valanar's Signet Ring
-                player->AddItem(34658, true);//Original ring1 added to inventory
-                player->EquipNewItem(EQUIPMENT_SLOT_FINGER2, 38672, true);// Keleseth's Signet Ring
-                player->AddItem(38147, true);//Original ring2 added to inventory                
-                player->EquipNewItem(EQUIPMENT_SLOT_NECK, 38662, true);//Bladed Ebon Amulet
-                player->AddItem(34657, true);//Original necklace added to inventory
+                player->AddItem(38675, true);//player->EquipNewItem(EQUIPMENT_SLOT_TRINKET1, 38675, true);//Signet of the Dark Brotherhood
+                player->AddItem(38674, true);//player->EquipNewItem(EQUIPMENT_SLOT_TRINKET2, 38674, true);//Soul Harvester's Charm
+                player->AddItem(38671, true);//player->EquipNewItem(EQUIPMENT_SLOT_FINGER1, 38671, true);//Valanar's Signet Ring
+                player->AddItem(38672, true);//player->EquipNewItem(EQUIPMENT_SLOT_FINGER2, 38672, true);// Keleseth's Signet Ring
                 player->AddItem(39320, true);//Sky Darkener's Shroud of Blood
                 player->AddItem(38664, true);//Sky Darkener's Shroud of the Unholy
                 player->AddItem(39322, true);//Shroud of the North Wind
@@ -96,7 +92,7 @@ public:
                 if (player->GetTeamId() == TEAM_ALLIANCE && player->GetQuestStatus(13188) == QUEST_STATUS_NONE)//Where Kings Walk
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13188), nullptr);
                 else if (player->GetTeamId() == TEAM_HORDE && player->GetQuestStatus(13189) == QUEST_STATUS_NONE)//Saurfang's Blessing
-                    player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);                
                 if (player->GetTeamId() == TEAM_ALLIANCE)
                     player->TeleportTo(0, -8452.56f, 347.08f, 120.89f, 5.38f);//Stormwind
                 else
@@ -127,14 +123,10 @@ public:
                 player->AddItem(38669, true);//player->EquipNewItem(EQUIPMENT_SLOT_LEGS, 38669, true);//Engraved Saronite Legplates
                 player->AddItem(38663, true);//player->EquipNewItem(EQUIPMENT_SLOT_SHOULDERS, 38663, true);// Blood-Soaked Saronite Plated Spaulders
                 player->AddItem(38670, true);//player->EquipNewItem(EQUIPMENT_SLOT_FEET, 38670, true);//Greaves of the Slaughter
-                player->EquipNewItem(EQUIPMENT_SLOT_TRINKET1, 38675, true);//Signet of the Dark Brotherhood
-                player->EquipNewItem(EQUIPMENT_SLOT_TRINKET2, 38674, true);//Soul Harvester's Charm
-                player->EquipNewItem(EQUIPMENT_SLOT_FINGER1, 38671, true);//Valanar's Signet Ring
-                player->AddItem(34658, true);//Original ring1 added to inventory
-                player->EquipNewItem(EQUIPMENT_SLOT_FINGER2, 38672, true);// Keleseth's Signet Ring
-                player->AddItem(38147, true);//Original ring2 added to inventory                
-                player->EquipNewItem(EQUIPMENT_SLOT_NECK, 38662, true);//Bladed Ebon Amulet
-                player->AddItem(34657, true);//Original necklace added to inventory
+                player->AddItem(38675, true);//player->EquipNewItem(EQUIPMENT_SLOT_TRINKET1, 38675, true);//Signet of the Dark Brotherhood
+                player->AddItem(38674, true);//player->EquipNewItem(EQUIPMENT_SLOT_TRINKET2, 38674, true);//Soul Harvester's Charm
+                player->AddItem(38671, true);//player->EquipNewItem(EQUIPMENT_SLOT_FINGER1, 38671, true);//Valanar's Signet Ring
+                player->AddItem(38672, true);//player->EquipNewItem(EQUIPMENT_SLOT_FINGER2, 38672, true);// Keleseth's Signet Ring
                 player->AddItem(39320, true);//Sky Darkener's Shroud of Blood
                 player->AddItem(38664, true);//Sky Darkener's Shroud of the Unholy
                 player->AddItem(39322, true);//Shroud of the North Wind
@@ -247,14 +239,10 @@ public:
                 player->AddItem(38669, true);//player->EquipNewItem(EQUIPMENT_SLOT_LEGS, 38669, true);//Engraved Saronite Legplates
                 player->AddItem(38663, true);//player->EquipNewItem(EQUIPMENT_SLOT_SHOULDERS, 38663, true);// Blood-Soaked Saronite Plated Spaulders
                 player->AddItem(38670, true);//player->EquipNewItem(EQUIPMENT_SLOT_FEET, 38670, true);//Greaves of the Slaughter
-                player->EquipNewItem(EQUIPMENT_SLOT_TRINKET1, 38675, true);//Signet of the Dark Brotherhood
-                player->EquipNewItem(EQUIPMENT_SLOT_TRINKET2, 38674, true);//Soul Harvester's Charm
-                player->EquipNewItem(EQUIPMENT_SLOT_FINGER1, 38671, true);//Valanar's Signet Ring
-                player->AddItem(34658, true);//Original ring1 added to inventory
-                player->EquipNewItem(EQUIPMENT_SLOT_FINGER2, 38672, true);// Keleseth's Signet Ring
-                player->AddItem(38147, true);//Original ring2 added to inventory                
-                player->EquipNewItem(EQUIPMENT_SLOT_NECK, 38662, true);//Bladed Ebon Amulet
-                player->AddItem(34657, true);//Original necklace added to inventory
+                player->AddItem(38675, true);//player->EquipNewItem(EQUIPMENT_SLOT_TRINKET1, 38675, true);//Signet of the Dark Brotherhood
+                player->AddItem(38674, true);//player->EquipNewItem(EQUIPMENT_SLOT_TRINKET2, 38674, true);//Soul Harvester's Charm
+                player->AddItem(38671, true);//player->EquipNewItem(EQUIPMENT_SLOT_FINGER1, 38671, true);//Valanar's Signet Ring
+                player->AddItem(38672, true);//player->EquipNewItem(EQUIPMENT_SLOT_FINGER2, 38672, true);// Keleseth's Signet Ring
                 player->AddItem(39320, true);//Sky Darkener's Shroud of Blood
                 player->AddItem(38664, true);//Sky Darkener's Shroud of the Unholy
                 player->AddItem(39322, true);//Shroud of the North Wind
