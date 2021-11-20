@@ -59,18 +59,20 @@ public:
                 player->learnSpell(48778);//acherus deathcharger
                 player->learnSkillRewardedSpells(776, 375);//Runeforging
                 player->learnSkillRewardedSpells(960, 375);//Runeforging
-                player->EquipNewItem(EQUIPMENT_SLOT_HEAD, 38661, true);//Greathelm of the Scourge Champion
-                player->EquipNewItem(EQUIPMENT_SLOT_WRISTS, 38666, true);//Plated Saronite Bracers
-                player->EquipNewItem(EQUIPMENT_SLOT_WAIST, 38668, true);//The Plaguebringer's Girdle
-                player->EquipNewItem(EQUIPMENT_SLOT_HANDS, 38667, true);//Bloodbane's Gauntlets of Command
-                player->EquipNewItem(EQUIPMENT_SLOT_CHEST, 38665, true);//Saronite War Plate
-                player->EquipNewItem(EQUIPMENT_SLOT_LEGS, 38669, true);//Engraved Saronite Legplates
-                player->EquipNewItem(EQUIPMENT_SLOT_SHOULDERS, 38663, true);// Blood-Soaked Saronite Plated Spaulders
-                player->EquipNewItem(EQUIPMENT_SLOT_FEET, 38670, true);//Greaves of the Slaughter
+                player->AddItem(38661, true);//player->EquipNewItem(EQUIPMENT_SLOT_HEAD, 38661, true);//Greathelm of the Scourge Champion
+                player->AddItem(38666, true);//player->EquipNewItem(EQUIPMENT_SLOT_WRISTS, 38666, true);//Plated Saronite Bracers
+                player->AddItem(38668, true);//player->EquipNewItem(EQUIPMENT_SLOT_WAIST, 38668, true);//The Plaguebringer's Girdle
+                player->AddItem(38667, true);//player->EquipNewItem(EQUIPMENT_SLOT_HANDS, 38667, true);//Bloodbane's Gauntlets of Command
+                player->AddItem(38665, true);//player->EquipNewItem(EQUIPMENT_SLOT_CHEST, 38665, true);//Saronite War Plate
+                player->AddItem(38669, true);//player->EquipNewItem(EQUIPMENT_SLOT_LEGS, 38669, true);//Engraved Saronite Legplates
+                player->AddItem(38663, true);//player->EquipNewItem(EQUIPMENT_SLOT_SHOULDERS, 38663, true);// Blood-Soaked Saronite Plated Spaulders
+                player->AddItem(38670, true);//player->EquipNewItem(EQUIPMENT_SLOT_FEET, 38670, true);//Greaves of the Slaughter
                 player->EquipNewItem(EQUIPMENT_SLOT_TRINKET1, 38675, true);//Signet of the Dark Brotherhood
                 player->EquipNewItem(EQUIPMENT_SLOT_TRINKET2, 38674, true);//Soul Harvester's Charm
                 player->EquipNewItem(EQUIPMENT_SLOT_FINGER1, 38671, true);//Valanar's Signet Ring
+                player->AddItem(34658, true);//Original ring1 added to inventory
                 player->EquipNewItem(EQUIPMENT_SLOT_FINGER2, 38672, true);// Keleseth's Signet Ring
+                player->AddItem(38147, true);//Original ring2 added to inventory
                 player->AddItem(39320, true);//Sky Darkener's Shroud of Blood
                 player->AddItem(38664, true);//Sky Darkener's Shroud of the Unholy
                 player->AddItem(39322, true);//Shroud of the North Wind
@@ -96,7 +98,7 @@ public:
                 if (player->GetTeamId() == TEAM_ALLIANCE)
                     player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
                 else
-                    player->TeleportTo(1, 1569.59f, -4397.63f, 16.06f, 0.54f);//Orgrimmar
+                    player->TeleportTo(1, 1920.80f, -4138.36f, 40.57f, 1.64f);//Orgrimmar
                 ObjectAccessor::SaveAllPlayers();//Save
             }
         }
@@ -115,18 +117,20 @@ public:
                 player->learnSpell(48778);//acherus deathcharger
                 player->learnSkillRewardedSpells(776, 375);//Runeforging
                 player->learnSkillRewardedSpells(960, 375);//Runeforging
-                player->EquipNewItem(EQUIPMENT_SLOT_HEAD, 38661, true);//Greathelm of the Scourge Champion
-                player->EquipNewItem(EQUIPMENT_SLOT_WRISTS, 38666, true);//Plated Saronite Bracers
-                player->EquipNewItem(EQUIPMENT_SLOT_WAIST, 38668, true);//The Plaguebringer's Girdle
-                player->EquipNewItem(EQUIPMENT_SLOT_HANDS, 38667, true);//Bloodbane's Gauntlets of Command
-                player->EquipNewItem(EQUIPMENT_SLOT_CHEST, 38665, true);//Saronite War Plate
-                player->EquipNewItem(EQUIPMENT_SLOT_LEGS, 38669, true);//Engraved Saronite Legplates
-                player->EquipNewItem(EQUIPMENT_SLOT_SHOULDERS, 38663, true);// Blood-Soaked Saronite Plated Spaulders
-                player->EquipNewItem(EQUIPMENT_SLOT_FEET, 38670, true);//Greaves of the Slaughter
+                player->AddItem(38661, true);//player->EquipNewItem(EQUIPMENT_SLOT_HEAD, 38661, true);//Greathelm of the Scourge Champion
+                player->AddItem(38666, true);//player->EquipNewItem(EQUIPMENT_SLOT_WRISTS, 38666, true);//Plated Saronite Bracers
+                player->AddItem(38668, true);//player->EquipNewItem(EQUIPMENT_SLOT_WAIST, 38668, true);//The Plaguebringer's Girdle
+                player->AddItem(38667, true);//player->EquipNewItem(EQUIPMENT_SLOT_HANDS, 38667, true);//Bloodbane's Gauntlets of Command
+                player->AddItem(38665, true);//player->EquipNewItem(EQUIPMENT_SLOT_CHEST, 38665, true);//Saronite War Plate
+                player->AddItem(38669, true);//player->EquipNewItem(EQUIPMENT_SLOT_LEGS, 38669, true);//Engraved Saronite Legplates
+                player->AddItem(38663, true);//player->EquipNewItem(EQUIPMENT_SLOT_SHOULDERS, 38663, true);// Blood-Soaked Saronite Plated Spaulders
+                player->AddItem(38670, true);//player->EquipNewItem(EQUIPMENT_SLOT_FEET, 38670, true);//Greaves of the Slaughter
                 player->EquipNewItem(EQUIPMENT_SLOT_TRINKET1, 38675, true);//Signet of the Dark Brotherhood
                 player->EquipNewItem(EQUIPMENT_SLOT_TRINKET2, 38674, true);//Soul Harvester's Charm
                 player->EquipNewItem(EQUIPMENT_SLOT_FINGER1, 38671, true);//Valanar's Signet Ring
+                player->AddItem(34658, true);//Original ring1 added to inventory
                 player->EquipNewItem(EQUIPMENT_SLOT_FINGER2, 38672, true);// Keleseth's Signet Ring
+                player->AddItem(38147, true);//Original ring2 added to inventory
                 player->AddItem(39320, true);//Sky Darkener's Shroud of Blood
                 player->AddItem(38664, true);//Sky Darkener's Shroud of the Unholy
                 player->AddItem(39322, true);//Shroud of the North Wind
@@ -152,7 +156,7 @@ public:
                 if (player->GetTeamId() == TEAM_ALLIANCE)
                     player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
                 else
-                    player->TeleportTo(1, 1569.59f, -4397.63f, 16.06f, 0.54f);//Orgrimmar
+                    player->TeleportTo(1, 1920.80f, -4138.36f, 40.57f, 1.64f);//Orgrimmar
                 ObjectAccessor::SaveAllPlayers();//Save
             }
         }
@@ -212,8 +216,8 @@ public:
             switch (gossipListId)
             {
             case 11:
-                AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Yes", GOSSIP_SENDER_MAIN, 12);
-                AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "No", GOSSIP_SENDER_MAIN, 13);
+                AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Je souhaite passer l'introduction du Chevalier de la mort (ce choix est irrévocable).", GOSSIP_SENDER_MAIN, 12);
+                AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Non merci, pas pour l'instant.", GOSSIP_SENDER_MAIN, 13);
                 SendGossipMenuFor(player, player->GetGossipTextId(creature), creature->GetGUID());
                 break;
 
@@ -231,18 +235,20 @@ public:
                 player->learnSpell(48778, false);//acherus deathcharger
                 player->learnSkillRewardedSpells(776, 375);//Runeforging
                 player->learnSkillRewardedSpells(960, 375);//Runeforging
-                player->EquipNewItem(EQUIPMENT_SLOT_HEAD, 38661, true);//Greathelm of the Scourge Champion
-                player->EquipNewItem(EQUIPMENT_SLOT_WRISTS, 38666, true);//Plated Saronite Bracers
-                player->EquipNewItem(EQUIPMENT_SLOT_WAIST, 38668, true);//The Plaguebringer's Girdle
-                player->EquipNewItem(EQUIPMENT_SLOT_HANDS, 38667, true);//Bloodbane's Gauntlets of Command
-                player->EquipNewItem(EQUIPMENT_SLOT_CHEST, 38665, true);//Saronite War Plate
-                player->EquipNewItem(EQUIPMENT_SLOT_LEGS, 38669, true);//Engraved Saronite Legplates
-                player->EquipNewItem(EQUIPMENT_SLOT_SHOULDERS, 38663, true);// Blood-Soaked Saronite Plated Spaulders
-                player->EquipNewItem(EQUIPMENT_SLOT_FEET, 38670, true);//Greaves of the Slaughter
+                player->AddItem(38661, true);//player->EquipNewItem(EQUIPMENT_SLOT_HEAD, 38661, true);//Greathelm of the Scourge Champion
+                player->AddItem(38666, true);//player->EquipNewItem(EQUIPMENT_SLOT_WRISTS, 38666, true);//Plated Saronite Bracers
+                player->AddItem(38668, true);//player->EquipNewItem(EQUIPMENT_SLOT_WAIST, 38668, true);//The Plaguebringer's Girdle
+                player->AddItem(38667, true);//player->EquipNewItem(EQUIPMENT_SLOT_HANDS, 38667, true);//Bloodbane's Gauntlets of Command
+                player->AddItem(38665, true);//player->EquipNewItem(EQUIPMENT_SLOT_CHEST, 38665, true);//Saronite War Plate
+                player->AddItem(38669, true);//player->EquipNewItem(EQUIPMENT_SLOT_LEGS, 38669, true);//Engraved Saronite Legplates
+                player->AddItem(38663, true);//player->EquipNewItem(EQUIPMENT_SLOT_SHOULDERS, 38663, true);// Blood-Soaked Saronite Plated Spaulders
+                player->AddItem(38670, true);//player->EquipNewItem(EQUIPMENT_SLOT_FEET, 38670, true);//Greaves of the Slaughter
                 player->EquipNewItem(EQUIPMENT_SLOT_TRINKET1, 38675, true);//Signet of the Dark Brotherhood
                 player->EquipNewItem(EQUIPMENT_SLOT_TRINKET2, 38674, true);//Soul Harvester's Charm
                 player->EquipNewItem(EQUIPMENT_SLOT_FINGER1, 38671, true);//Valanar's Signet Ring
+                player->AddItem(34658, true);//Original ring1 added to inventory
                 player->EquipNewItem(EQUIPMENT_SLOT_FINGER2, 38672, true);// Keleseth's Signet Ring
+                player->AddItem(38147, true);//Original ring2 added to inventory
                 player->AddItem(39320, true);//Sky Darkener's Shroud of Blood
                 player->AddItem(38664, true);//Sky Darkener's Shroud of the Unholy
                 player->AddItem(39322, true);//Shroud of the North Wind
@@ -266,9 +272,9 @@ public:
                 else if (player->GetTeamId() == TEAM_HORDE && player->GetQuestStatus(13189) == QUEST_STATUS_NONE)//Saurfang's Blessing
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);
                 if (player->GetTeamId() == TEAM_ALLIANCE)
-                    player->TeleportTo(0, -8833.37f, 628.62f, 94.00f, 1.06f);//Stormwind
+                    player->TeleportTo(0, -8452.56f, 347.08f, 120.89f, 5.38f);//Stormwind
                 else
-                    player->TeleportTo(1, 1569.59f, -4397.63f, 16.06f, 0.54f);//Orgrimmar
+                    player->TeleportTo(1, 1920.80f, -4138.36f, 40.57f, 1.64f);//Orgrimmar
                 ObjectAccessor::SaveAllPlayers();//Save
                 CloseGossipMenuFor(player);
                 break;
