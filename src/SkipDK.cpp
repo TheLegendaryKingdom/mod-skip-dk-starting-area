@@ -50,6 +50,7 @@ public:
             if (player->GetAreaId() == 4342)
             {
                 player->SetLevel(DKL);
+                player->removeSpell(81042, SPEC_MASK_ALL, false);//unlearn liche passeuse
                 player->learnSpell(53428);//runeforging
                 player->learnSpell(53441);//runeforging
                 player->learnSpell(53344);//runeforging
@@ -106,6 +107,7 @@ public:
             if (player->GetSession()->GetSecurity() >= SEC_MODERATOR && player->GetAreaId() == 4342)
             {
                 player->SetLevel(DKL);
+                player->removeSpell(81042, SPEC_MASK_ALL, false);//unlearn liche passeuse
                 player->learnSpell(53428);//runeforging
                 player->learnSpell(53441);//runeforging
                 player->learnSpell(53344);//runeforging
@@ -222,6 +224,7 @@ public:
                 {
                     player->SetLevel(DKL);
                 }
+                player->removeSpell(81042, SPEC_MASK_ALL, false);//unlearn liche passeuse
                 player->learnSpell(53428, false);//runeforging
                 player->learnSpell(53441, false);//runeforging
                 player->learnSpell(53344, false);//runeforging
