@@ -60,7 +60,7 @@ public:
                 player->learnSpell(48778);//acherus deathcharger
                 player->learnSkillRewardedSpells(776, 375);//Runeforging
                 player->learnSkillRewardedSpells(960, 375);//Runeforging
-                player->AddItem(38661, true);//player->EquipNewItem(EQUIPMENT_SLOT_HEAD, 38661, true);//Greathelm of the Scourge Champion
+                /*player->AddItem(38661, true);//player->EquipNewItem(EQUIPMENT_SLOT_HEAD, 38661, true);//Greathelm of the Scourge Champion
                 player->AddItem(38666, true);//player->EquipNewItem(EQUIPMENT_SLOT_WRISTS, 38666, true);//Plated Saronite Bracers
                 player->AddItem(38668, true);//player->EquipNewItem(EQUIPMENT_SLOT_WAIST, 38668, true);//The Plaguebringer's Girdle
                 player->AddItem(38667, true);//player->EquipNewItem(EQUIPMENT_SLOT_HANDS, 38667, true);//Bloodbane's Gauntlets of Command
@@ -78,8 +78,19 @@ public:
                 player->AddItem(38632, true);//Greatsword of the Ebon Blade
                 player->AddItem(6948, true);//Hearthstone
                 player->AddItem(38707, true);//Runed Soulblade
-                player->AddItem(40483, true);//Insignia of the Scourge
-
+                player->AddItem(40483, true);//Insignia of the Scourge*/				
+                player->AddItem(6948, true);//Hearthstone
+                player->AddItem(60074, true);//Paquetage de Chevalier de la mort d'Achérus
+				if (player->GetQuestStatus(30001) == QUEST_STATUS_NONE)//Passer l'introduction du Chevalier de la mort
+                {
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(30001), nullptr);
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(30001), false, player);
+                }
+				if (player->GetQuestStatus(30009) == QUEST_STATUS_NONE)//Jouer l'introduction du Chevalier de la mort
+                {
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(30009), nullptr);
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(30009), false, player);
+                }
                 if (player->GetQuestStatus(12657) == QUEST_STATUS_NONE)//The Might Of The Scourge
                 {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(12657), nullptr);
@@ -91,13 +102,19 @@ public:
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(12801), false, player);
                 }
                 if (player->GetTeamId() == TEAM_ALLIANCE && player->GetQuestStatus(13188) == QUEST_STATUS_NONE)//Where Kings Walk
+                {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13188), nullptr);
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(13188), false, player);
+                }
                 else if (player->GetTeamId() == TEAM_HORDE && player->GetQuestStatus(13189) == QUEST_STATUS_NONE)//Saurfang's Blessing
-                    player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);                
+                {
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);  
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(13189), false, player);
+                }         
                 if (player->GetTeamId() == TEAM_ALLIANCE)
-                    player->TeleportTo(0, -8452.56f, 347.08f, 120.89f, 5.38f);//Stormwind
+                    player->TeleportTo(0, -8426.31f, 329.32f, 120.89f, 6.15f);//Stormwind
                 else
-                    player->TeleportTo(1, 1920.80f, -4138.36f, 40.57f, 1.64f);//Orgrimmar
+                    player->TeleportTo(1, 1907.91f, -4143.45f, 40.64f, 2.99f);//Orgrimmar
                 ObjectAccessor::SaveAllPlayers();//Save
             }
         }
@@ -117,7 +134,7 @@ public:
                 player->learnSpell(48778);//acherus deathcharger
                 player->learnSkillRewardedSpells(776, 375);//Runeforging
                 player->learnSkillRewardedSpells(960, 375);//Runeforging
-                player->AddItem(38661, true);//player->EquipNewItem(EQUIPMENT_SLOT_HEAD, 38661, true);//Greathelm of the Scourge Champion
+                /*player->AddItem(38661, true);//player->EquipNewItem(EQUIPMENT_SLOT_HEAD, 38661, true);//Greathelm of the Scourge Champion
                 player->AddItem(38666, true);//player->EquipNewItem(EQUIPMENT_SLOT_WRISTS, 38666, true);//Plated Saronite Bracers
                 player->AddItem(38668, true);//player->EquipNewItem(EQUIPMENT_SLOT_WAIST, 38668, true);//The Plaguebringer's Girdle
                 player->AddItem(38667, true);//player->EquipNewItem(EQUIPMENT_SLOT_HANDS, 38667, true);//Bloodbane's Gauntlets of Command
@@ -135,8 +152,19 @@ public:
                 player->AddItem(38632, true);//Greatsword of the Ebon Blade
                 player->AddItem(6948, true);//Hearthstone
                 player->AddItem(38707, true);//Runed Soulblade
-                player->AddItem(40483, true);//Insignia of the Scourge
-
+                player->AddItem(40483, true);//Insignia of the Scourge*/				
+                player->AddItem(6948, true);//Hearthstone
+                player->AddItem(60074, true);//Paquetage de Chevalier de la mort d'Achérus
+				if (player->GetQuestStatus(30001) == QUEST_STATUS_NONE)//Passer l'introduction du Chevalier de la mort
+                {
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(30001), nullptr);
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(30001), false, player);
+                }
+				if (player->GetQuestStatus(30009) == QUEST_STATUS_NONE)//Jouer l'introduction du Chevalier de la mort
+                {
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(30009), nullptr);
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(30009), false, player);
+                }
                 if (player->GetQuestStatus(12657) == QUEST_STATUS_NONE)//The Might Of The Scourge
                 {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(12657), nullptr);
@@ -148,13 +176,19 @@ public:
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(12801), false, player);
                 }
                 if (player->GetTeamId() == TEAM_ALLIANCE && player->GetQuestStatus(13188) == QUEST_STATUS_NONE)//Where Kings Walk
+                {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13188), nullptr);
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(13188), false, player);
+                }
                 else if (player->GetTeamId() == TEAM_HORDE && player->GetQuestStatus(13189) == QUEST_STATUS_NONE)//Saurfang's Blessing
-                    player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);
+                {
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);  
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(13189), false, player);
+                }
                 if (player->GetTeamId() == TEAM_ALLIANCE)
-                    player->TeleportTo(0, -8452.56f, 347.08f, 120.89f, 5.38f);//Stormwind
+                    player->TeleportTo(0, -8426.31f, 329.32f, 120.89f, 6.15f);//Stormwind
                 else
-                    player->TeleportTo(1, 1920.80f, -4138.36f, 40.57f, 1.64f);//Orgrimmar
+                    player->TeleportTo(1, 1907.91f, -4143.45f, 40.64f, 2.99f);//Orgrimmar
                 ObjectAccessor::SaveAllPlayers();//Save
             }
         }
@@ -214,8 +248,21 @@ public:
             switch (gossipListId)
             {
             case 11:
-                AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Je souhaite passer l'introduction du Chevalier de la mort (ce choix est irrévocable).", GOSSIP_SENDER_MAIN, 12);
-                AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Non merci, pas pour l'instant.", GOSSIP_SENDER_MAIN, 13);
+                
+				if (player->getClass() == CLASS_DEATH_KNIGHT)
+				{
+					if (player->GetQuestStatus(30009) == QUEST_STATUS_NONE)//Engagement dans l'introduction du Chevalier de la mort
+					{
+						AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Je souhaite passer l'introduction du Chevalier de la mort (ce choix est irrévocable).", GOSSIP_SENDER_MAIN, 12);
+						AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Non merci, pas pour l'instant.", GOSSIP_SENDER_MAIN, 13);
+					}
+					else						
+						AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "J'ai décidé de jouer l'introduction du Chevalier de la mort.", GOSSIP_SENDER_MAIN, 13);					
+				}
+				else
+				{
+					AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Je ne suis pas un Chevalier de la mort.", GOSSIP_SENDER_MAIN, 13);
+				}					
                 SendGossipMenuFor(player, player->GetGossipTextId(creature), creature->GetGUID());
                 break;
 
@@ -234,7 +281,7 @@ public:
                 player->learnSpell(48778, false);//acherus deathcharger
                 player->learnSkillRewardedSpells(776, 375);//Runeforging
                 player->learnSkillRewardedSpells(960, 375);//Runeforging
-                player->AddItem(38661, true);//player->EquipNewItem(EQUIPMENT_SLOT_HEAD, 38661, true);//Greathelm of the Scourge Champion
+                /*player->AddItem(38661, true);//player->EquipNewItem(EQUIPMENT_SLOT_HEAD, 38661, true);//Greathelm of the Scourge Champion
                 player->AddItem(38666, true);//player->EquipNewItem(EQUIPMENT_SLOT_WRISTS, 38666, true);//Plated Saronite Bracers
                 player->AddItem(38668, true);//player->EquipNewItem(EQUIPMENT_SLOT_WAIST, 38668, true);//The Plaguebringer's Girdle
                 player->AddItem(38667, true);//player->EquipNewItem(EQUIPMENT_SLOT_HANDS, 38667, true);//Bloodbane's Gauntlets of Command
@@ -252,8 +299,19 @@ public:
                 player->AddItem(38632, true);//Greatsword of the Ebon Blade
                 player->AddItem(6948, true);//Hearthstone
                 player->AddItem(38707, true);//Runed Soulblade
-                player->AddItem(40483, true);//Insignia of the Scourge
-
+                player->AddItem(40483, true);//Insignia of the Scourge*/				
+                player->AddItem(6948, true);//Hearthstone
+                player->AddItem(60074, true);//Paquetage de Chevalier de la mort d'Achérus
+				if (player->GetQuestStatus(30001) == QUEST_STATUS_NONE)//Passer l'introduction du Chevalier de la mort
+                {
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(30001), nullptr);
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(30001), false, player);
+                }
+				if (player->GetQuestStatus(30009) == QUEST_STATUS_NONE)//Jouer l'introduction du Chevalier de la mort
+                {
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(30009), nullptr);
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(30009), false, player);
+                }
                 if (player->GetQuestStatus(12657) == QUEST_STATUS_NONE)//The Might Of The Scourge
                 {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(12657), nullptr);
@@ -265,19 +323,42 @@ public:
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(12801), false, player);
                 }
                 if (player->GetTeamId() == TEAM_ALLIANCE && player->GetQuestStatus(13188) == QUEST_STATUS_NONE)//Where Kings Walk
+                {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13188), nullptr);
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(13188), false, player);
+                }
                 else if (player->GetTeamId() == TEAM_HORDE && player->GetQuestStatus(13189) == QUEST_STATUS_NONE)//Saurfang's Blessing
-                    player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);
+                {
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);  
+                    player->RewardQuest(sObjectMgr->GetQuestTemplate(13189), false, player);
+                } 
                 if (player->GetTeamId() == TEAM_ALLIANCE)
-                    player->TeleportTo(0, -8452.56f, 347.08f, 120.89f, 5.38f);//Stormwind
+                    player->TeleportTo(0, -8426.31f, 329.32f, 120.89f, 6.15f);//Stormwind
                 else
-                    player->TeleportTo(1, 1920.80f, -4138.36f, 40.57f, 1.64f);//Orgrimmar
+                    player->TeleportTo(1, 1907.91f, -4143.45f, 40.64f, 2.99f);//Orgrimmar
                 ObjectAccessor::SaveAllPlayers();//Save
                 CloseGossipMenuFor(player);
                 break;
 
             case 13://close
                 CloseGossipMenuFor(player);
+				if (player->getClass() == CLASS_DEATH_KNIGHT)
+				{
+					if (player->GetQuestStatus(30009) == QUEST_STATUS_COMPLETE)//Engagement dans l'introduction du Chevalier de la mort
+					{
+						//Message "Vous êtes engagé dans l'introduction du Chevalier de la mort et ne pouvez plus la passer."
+						std::ostringstream ss;
+						ss << "|cffFF8000[|cFFBDB76BCL|cffFF8000] Vous avez décidé de jouer l'introduction du Chevalier de la mort |cFFBDB76Bet ne pouvez plus la passer.";
+						ChatHandler(player->GetSession()).SendSysMessage(ss.str().c_str());
+					}
+				}
+				else
+				{
+					//Message "Vous n'êtes pas un Chevalier de la mort."
+					std::ostringstream ss;
+					ss << "|cffFF8000[|cFFBDB76BCL|cffFF8000] Vous n'êtes pas |cFFBDB76Bun Chevalier de la mort.";
+					ChatHandler(player->GetSession()).SendSysMessage(ss.str().c_str());
+				}					
                 break;
 
             default:
