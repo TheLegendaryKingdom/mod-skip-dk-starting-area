@@ -261,7 +261,7 @@ public:
 						AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "J'ai décidé de jouer l'introduction du Chevalier de la mort.", GOSSIP_SENDER_MAIN, 13);
 						//Message "Vous êtes engagé dans l'introduction du Chevalier de la mort et ne pouvez plus la passer."
 						std::ostringstream ss;
-						ss << "|cffFF8000[|cFFBDB76BCL|cffFF8000] Vous avez décidé de jouer l'introduction du Chevalier de la mort |cFFBDB76Bet ne pouvez plus la passer.";
+						ss << "|cffFF8000Liche passeuse :|cFFBDB76B Vous avez décidé de jouer l'introduction du Chevalier de la mort et ne pouvez plus la passer.";
 						ChatHandler(player->GetSession()).SendSysMessage(ss.str().c_str());
 					}						
 											
@@ -271,7 +271,7 @@ public:
 					AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Je ne suis pas un Chevalier de la mort.", GOSSIP_SENDER_MAIN, 13);
 					//Message "Vous n'êtes pas un Chevalier de la mort."
 					std::ostringstream ss;
-					ss << "|cffFF8000[|cFFBDB76BCL|cffFF8000] Vous n'êtes pas |cFFBDB76Bun Chevalier de la mort.";
+					ss << "|cffFF8000Liche passeuse :|cFFBDB76B Vous n'êtes pas un Chevalier de la mort.";
 					ChatHandler(player->GetSession()).SendSysMessage(ss.str().c_str());
 				}					
                 SendGossipMenuFor(player, player->GetGossipTextId(creature), creature->GetGUID());
