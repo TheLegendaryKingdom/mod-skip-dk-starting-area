@@ -44,4 +44,13 @@ Skip.Deathknight.Start.Level = 58
 Skip.Deathknight.Optional.Enable = 1
 
 #
+
+#    Skip.Deathknight.Logout.Enable
+#    Enables logout after proceeding in order to update interface and mount page
+#	 (mount page seems to need relogging instead of ui reload).
+#    Default: 1 - (Active)
+
+Skip.Deathknight.Logout.Enable = 1
+
+#
 ###################################################################################################

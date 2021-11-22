@@ -115,6 +115,10 @@ public:
                 else
                     player->TeleportTo(1, 1907.91f, -4143.45f, 40.64f, 2.99f);//Orgrimmar
                 ObjectAccessor::SaveAllPlayers();//Save
+				if (sConfigMgr->GetBoolDefault("Skip.Deathknight.Logout.Enable", true))
+				{
+					player->GetSession()->LogoutPlayer(true);
+				}
             }
         }
 
@@ -188,6 +192,10 @@ public:
                 else
                     player->TeleportTo(1, 1907.91f, -4143.45f, 40.64f, 2.99f);//Orgrimmar
                 ObjectAccessor::SaveAllPlayers();//Save
+				if (sConfigMgr->GetBoolDefault("Skip.Deathknight.Logout.Enable", true))
+				{
+					player->GetSession()->LogoutPlayer(true);
+				}
             }
         }
     }
@@ -231,7 +239,7 @@ public:
                 case LOCALE_enUS: localizedEntry = LOCALE_LICHKING_0; break;
                 default: localizedEntry = LOCALE_LICHKING_0;
                 }
-                AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, localizedEntry, GOSSIP_SENDER_MAIN, 11);
+                AddGossipItemFor(player, GOSSIP_ICON_TALK, localizedEntry, GOSSIP_SENDER_MAIN, 11);
             }
             player->TalkedToCreature(creature->GetEntry(), creature->GetGUID());
             SendGossipMenuFor(player, player->GetGossipTextId(creature), creature->GetGUID());
@@ -250,13 +258,20 @@ public:
 				if (player->getClass() == CLASS_DEATH_KNIGHT)
 				{
 					if (player->GetQuestStatus(30009) == QUEST_STATUS_NONE)//Engagement dans l'introduction du Chevalier de la mort
-					{						
-						AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Je souhaite passer l'introduction du Chevalier de la mort (ce choix est irrévocable).", GOSSIP_SENDER_MAIN, 12);
-						AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Non merci, pas pour l'instant.", GOSSIP_SENDER_MAIN, 13);
+					{	
+						if (sConfigMgr->GetBoolDefault("Skip.Deathknight.Logout.Enable", true))
+						{
+							AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Passer l'introduction du Chevalier de la mort\n-ce choix est irrévocable\n-votre personnage sera déconnecté pour finaliser l'opération", GOSSIP_SENDER_MAIN, 12);
+						}
+						else
+						{
+							AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Passer l'introduction du Chevalier de la mort\n-ce choix est irrévocable", GOSSIP_SENDER_MAIN, 12);
+						}
+						AddGossipItemFor(player, GOSSIP_ICON_INTERACT_2, "Annuler", GOSSIP_SENDER_MAIN, 13);
 					}
 					else
 					{						
-						AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "J'ai décidé de jouer l'introduction du Chevalier de la mort.", GOSSIP_SENDER_MAIN, 13);
+						AddGossipItemFor(player, GOSSIP_ICON_TALK, "J'ai décidé de jouer l'introduction du Chevalier de la mort.", GOSSIP_SENDER_MAIN, 13);
 						//Message "Vous êtes engagé dans l'introduction du Chevalier de la mort et ne pouvez plus la passer."
 						std::ostringstream ss;
 						ss << "|cffFF8000Liche passeuse :|cFFBDB76B Vous avez décidé de jouer l'introduction du Chevalier de la mort et ne pouvez plus la passer.";
@@ -266,7 +281,7 @@ public:
 				}
 				else
 				{
-					AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Je ne suis pas un Chevalier de la mort.", GOSSIP_SENDER_MAIN, 13);
+					AddGossipItemFor(player, GOSSIP_ICON_TALK, "Je ne suis pas un Chevalier de la mort.", GOSSIP_SENDER_MAIN, 13);
 					//Message "Vous n'êtes pas un Chevalier de la mort."
 					std::ostringstream ss;
 					ss << "|cffFF8000Liche passeuse :|cFFBDB76B Vous n'êtes pas un Chevalier de la mort.";
@@ -345,6 +360,10 @@ public:
                 else
                     player->TeleportTo(1, 1907.91f, -4143.45f, 40.64f, 2.99f);//Orgrimmar
                 ObjectAccessor::SaveAllPlayers();//Save
+				if (sConfigMgr->GetBoolDefault("Skip.Deathknight.Logout.Enable", true))
+				{
+					player->GetSession()->LogoutPlayer(true);
+				}
                 CloseGossipMenuFor(player);
                 break;
 
