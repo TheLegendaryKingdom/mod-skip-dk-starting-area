@@ -80,12 +80,12 @@ public:
                 player->AddItem(40483, true);//Insignia of the Scourge*/				
                 player->AddItem(6948, true);//Hearthstone
                 player->AddItem(60074, true);//Paquetage de Chevalier de la mort d'Achérus
-				if (player->GetQuestStatus(30001) != QUEST_STATUS_COMPLETE)//La liche passeuse
+				if (player->GetQuestStatus(30001) == QUEST_STATUS_NONE)//La liche passeuse
                 {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(30001), nullptr);
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(30001), false, player);
                 }
-				if (player->GetQuestStatus(30009) != QUEST_STATUS_COMPLETE)//Jouer l'introduction du Chevalier de la mort
+				if (player->GetQuestStatus(30009) == QUEST_STATUS_NONE)//Jouer l'introduction du Chevalier de la mort
                 {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(30009), nullptr);
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(30009), false, player);
@@ -153,12 +153,12 @@ public:
                 player->AddItem(40483, true);//Insignia of the Scourge*/				
                 player->AddItem(6948, true);//Hearthstone
                 player->AddItem(60074, true);//Paquetage de Chevalier de la mort d'Achérus
-				if (player->GetQuestStatus(30001) != QUEST_STATUS_COMPLETE)//La liche passeuse
+				if (player->GetQuestStatus(30001) == QUEST_STATUS_NONE)//La liche passeuse
                 {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(30001), nullptr);
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(30001), false, player);
                 }
-				if (player->GetQuestStatus(30009) != QUEST_STATUS_COMPLETE)//Jouer l'introduction du Chevalier de la mort
+				if (player->GetQuestStatus(30009) == QUEST_STATUS_NONE)//Jouer l'introduction du Chevalier de la mort
                 {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(30009), nullptr);
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(30009), false, player);
@@ -249,13 +249,13 @@ public:
                 
 				if (player->getClass() == CLASS_DEATH_KNIGHT)
 				{
-					if (player->GetQuestStatus(30009) != QUEST_STATUS_COMPLETE)//Engagement dans l'introduction du Chevalier de la mort
-					{
+					if (player->GetQuestStatus(30009) == QUEST_STATUS_NONE)//Engagement dans l'introduction du Chevalier de la mort
+					{						
 						AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Je souhaite passer l'introduction du Chevalier de la mort (ce choix est irrévocable).", GOSSIP_SENDER_MAIN, 12);
 						AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Non merci, pas pour l'instant.", GOSSIP_SENDER_MAIN, 13);
 					}
 					else
-					{
+					{						
 						AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "J'ai décidé de jouer l'introduction du Chevalier de la mort.", GOSSIP_SENDER_MAIN, 13);
 						//Message "Vous êtes engagé dans l'introduction du Chevalier de la mort et ne pouvez plus la passer."
 						std::ostringstream ss;
@@ -310,12 +310,12 @@ public:
                 player->AddItem(40483, true);//Insignia of the Scourge*/				
                 player->AddItem(6948, true);//Hearthstone
                 player->AddItem(60074, true);//Paquetage de Chevalier de la mort d'Achérus
-				if (player->GetQuestStatus(30001) != QUEST_STATUS_COMPLETE)//La liche passeuse
+				if (player->GetQuestStatus(30001) == QUEST_STATUS_NONE)//La liche passeuse
                 {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(30001), nullptr);
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(30001), false, player);
                 }
-				if (player->GetQuestStatus(30009) != QUEST_STATUS_COMPLETE)//Jouer l'introduction du Chevalier de la mort
+				if (player->GetQuestStatus(30009) == QUEST_STATUS_NONE)//Jouer l'introduction du Chevalier de la mort
                 {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(30009), nullptr);
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(30009), false, player);
