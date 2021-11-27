@@ -8,12 +8,12 @@
 #        Enable this if you want to skip the Deathknight starting area
 #        Start with level 58 DK with Runeforging.
 #
-#    Skip.Deathknight.Starter.Announce.enable
+#    Skip.Deathknight.Starter.Announce.Enable
 #         Description: Announces Module when player logs in.
 #         Default:    0 - (Disabled)
 #                     1 - (Enabled)
 
-Skip.Deathknight.Starter.Announce.enable = 1
+Skip.Deathknight.Starter.Announce.Enable = 1
 
 #    Skip.DeathKnight.Starter.Enable
 #         Active Module for all new accounts regardless of account level. Instant Skip on DK Creation.
@@ -33,7 +33,6 @@ GM.Skip.Deathknight.Starter.Enable = 0
 #    Skip.Deathknight.Start.Level
 #         Adjusted Death Knight Start Level if module is used.
 #         Default:    58 - (Default)
-#
 
 Skip.Deathknight.Start.Level = 58
 
@@ -42,15 +41,6 @@ Skip.Deathknight.Start.Level = 58
 #    Default: 1 - (Active)
 
 Skip.Deathknight.Optional.Enable = 1
-
-#
-
-#    Skip.Deathknight.Logout.Enable
-#    Enables logout after proceeding in order to update interface and mount page
-#	 (mount page seems to need relogging instead of ui reload).
-#    Default: 1 - (Active)
-
-Skip.Deathknight.Logout.Enable = 1
 
 #
 ###################################################################################################
