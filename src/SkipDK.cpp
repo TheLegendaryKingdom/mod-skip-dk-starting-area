@@ -155,16 +155,25 @@ public:
 				if (player->GetQuestStatus(30001) == QUEST_STATUS_NONE)//La liche passeuse
                 {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(30001), nullptr);
+                }
+				if (player->GetQuestStatus(30001) != QUEST_STATUS_REWARDED)
+                {
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(30001), false, player);
                 }
 				if (player->GetQuestStatus(30002) == QUEST_STATUS_NONE)//DK INTRO SKIPPED
                 {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(30002), nullptr);
+                }
+				if (player->GetQuestStatus(30002) != QUEST_STATUS_REWARDED)
+                {
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(30002), false, player);
                 }
 				if (player->GetQuestStatus(30009) == QUEST_STATUS_NONE)//Jouer l'introduction du Chevalier de la mort
                 {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(30009), nullptr);
+                }
+				if (player->GetQuestStatus(30009) != QUEST_STATUS_REWARDED)
+                {
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(30009), false, player);
                 }
                 if (player->GetQuestStatus(12657) == QUEST_STATUS_NONE)//The Might Of The Scourge
@@ -176,6 +185,10 @@ public:
                 {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(12801), nullptr);
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(12801), false, player);
+                }
+				if (player->GetQuestStatus(30003) == QUEST_STATUS_NONE)//Quitter les lieux
+                {
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(30003), nullptr);
                 }
                 /*if (player->GetTeamId() == TEAM_ALLIANCE && player->GetQuestStatus(13188) == QUEST_STATUS_NONE)//Where Kings Walk
                 {
