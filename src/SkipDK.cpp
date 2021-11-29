@@ -84,7 +84,7 @@ public:
                 
 				if (player->getClass() == CLASS_DEATH_KNIGHT)
 				{
-					if (player->GetQuestStatus(30009) == QUEST_STATUS_NONE)//Engagement dans l'introduction du Chevalier de la mort
+					if (player->GetQuestStatus(30009) != QUEST_STATUS_REWARDED)//Engagement dans l'introduction du Chevalier de la mort
 					{	
 						if (sConfigMgr->GetBoolDefault("Skip.Deathknight.Logout.Enable", true))
 						{
