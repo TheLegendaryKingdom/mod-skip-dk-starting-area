@@ -177,7 +177,7 @@ public:
                     player->AddQuest(sObjectMgr->GetQuestTemplate(12801), nullptr);
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(12801), false, player);
                 }
-                if (player->GetTeamId() == TEAM_ALLIANCE && player->GetQuestStatus(13188) == QUEST_STATUS_NONE)//Where Kings Walk
+                /*if (player->GetTeamId() == TEAM_ALLIANCE && player->GetQuestStatus(13188) == QUEST_STATUS_NONE)//Where Kings Walk
                 {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13188), nullptr);
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(13188), false, player);
@@ -186,7 +186,7 @@ public:
                 {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);  
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(13189), false, player);
-                }
+                }*/
                 CloseGossipMenuFor(player);				
                 ObjectAccessor::SaveAllPlayers();//Save
 				//player->GetSession()->LogoutPlayer(true);//Logout forces ui to be fully (re)loaded at logback. COMMENT TO TEST IF NO TELEPORT ALLOWS UI TO CORRECTLY LOAD ITEMS
