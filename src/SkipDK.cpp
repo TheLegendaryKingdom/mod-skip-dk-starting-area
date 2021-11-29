@@ -189,6 +189,7 @@ public:
 				if (player->GetQuestStatus(30003) == QUEST_STATUS_NONE)//Quitter les lieux
                 {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(30003), nullptr);
+					player->CompleteQuest(30003);
                 }
                 /*if (player->GetTeamId() == TEAM_ALLIANCE && player->GetQuestStatus(13188) == QUEST_STATUS_NONE)//Where Kings Walk
                 {
