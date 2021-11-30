@@ -85,7 +85,6 @@ public:
 
         bool OnGossipSelect(Player* player, Creature* creature, uint32 /*menuId*/, uint32 gossipListId) override
         {
-            int DKL = sConfigMgr->GetFloatDefault("Skip.Deathknight.Start.Level", 58);
             CloseGossipMenuFor(player);
             ClearGossipMenuFor(player);
             switch (gossipListId)
@@ -167,10 +166,10 @@ public:
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);  
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(13189), false, player);
                 }*/
-                if (player->getLevel() < DKL)
+                /*if (player->getLevel() < DKL)
                 {
                     player->SetLevel(DKL);
-                }				
+                }*/				
                 CloseGossipMenuFor(player);
 				ClearGossipMenuFor(player);				
                 ObjectAccessor::SaveAllPlayers();//Save
