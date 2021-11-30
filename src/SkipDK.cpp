@@ -34,21 +34,7 @@ public:
         if (sConfigMgr->GetBoolDefault("Skip.Deathknight.Starter.Announce.Enable", true))
         {
             ChatHandler(player->GetSession()).SendSysMessage("This server is running the |cff4CFF00Azerothcore Skip Deathknight Starter |rmodule.");
-        }		
-		/*if (player->getClass() == CLASS_DEATH_KNIGHT)
-		{
-		    if (player->GetQuestStatus(30002) == QUEST_STATUS_REWARDED && player->GetQuestStatus(30003) == QUEST_STATUS_NONE)
-            {
-				if (player->GetTeamId() == TEAM_ALLIANCE)
-                    player->TeleportTo(0, -8426.31f, 329.32f, 120.89f, 6.15f);//Stormwind
-                else
-                    player->TeleportTo(1, 1907.91f, -4143.45f, 40.64f, 2.99f);//Orgrimmar
-                player->AddQuest(sObjectMgr->GetQuestTemplate(30003), nullptr);//DK INTRO ZONE LEFT
-                player->RewardQuest(sObjectMgr->GetQuestTemplate(30003), false, player);
-                
-                ObjectAccessor::SaveAllPlayers();//Save
-		    }	
-        }*/
+        }
 	}
 };
 
@@ -66,7 +52,31 @@ public:
 
             if (sConfigMgr->GetBoolDefault("Skip.Deathknight.Optional.Enable", true))
             {
-                AddGossipItemFor(player, GOSSIP_ICON_TALK, "Je souhaite sauter la série de quêtes de démarrage du Chevalier de la mort.", GOSSIP_SENDER_MAIN, 11);
+				if (player->getClass() == CLASS_DEATH_KNIGHT)
+				{
+					if (player->GetQuestStatus(30009) != QUEST_STATUS_REWARDED && player->GetQuestStatus(30002) == QUEST_STATUS_NONE)//Jouer l'introduction du Chevalier de la mort //Passer l'introduction du Chevalier de la mort
+					{
+						AddGossipItemFor(player, GOSSIP_ICON_TALK, "Je souhaite sauter la série de quêtes de démarrage du Chevalier de la mort.", GOSSIP_SENDER_MAIN, 11);
+					}
+					else if (player->GetQuestStatus(30002) != QUEST_STATUS_NONE && player->GetQuestStatus(30003) == QUEST_STATUS_REWARDED)//Passer l'introduction du Chevalier de la mort //Quitter les lieux
+					{
+						std::ostringstream ss;
+						ss << "|cffFF8000Liche passeuse :|cFFBDB76B Vous avez passé l'introduction du Chevalier de la mort.";
+						ChatHandler(player->GetSession()).SendSysMessage(ss.str().c_str());							
+					}
+					else if (player->GetQuestStatus(30009) == QUEST_STATUS_REWARDED && player->GetQuestStatus(30003) == QUEST_STATUS_NONE)
+					{
+						std::ostringstream ss;
+						ss << "|cffFF8000Liche passeuse :|cFFBDB76B Vous avez décidé de jouer l'introduction du Chevalier de la mort et ne pouvez plus la passer.";
+						ChatHandler(player->GetSession()).SendSysMessage(ss.str().c_str());
+					}                    					
+				}
+				else
+				{
+					std::ostringstream ss;
+					ss << "|cffFF8000Liche passeuse :|cFFBDB76B Je ne propose mes services qu'aux Chevaliers de la mort.";
+					ChatHandler(player->GetSession()).SendSysMessage(ss.str().c_str());
+				}
             }
             player->TalkedToCreature(creature->GetEntry(), creature->GetGUID());
             SendGossipMenuFor(player, player->GetGossipTextId(creature), creature->GetGUID());
@@ -82,65 +92,21 @@ public:
             {
             case 11:
                 
-				if (player->getClass() == CLASS_DEATH_KNIGHT)
-				{
-					if (player->GetQuestStatus(30009) != QUEST_STATUS_REWARDED)//Engagement dans l'introduction du Chevalier de la mort
-					{	
-						if (sConfigMgr->GetBoolDefault("Skip.Deathknight.Logout.Enable", true))
-						{
-							AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Passer l'introduction du Chevalier de la mort\n•votre personnage sera déconnecté pour finaliser l'opération\n•ce choix est irrévocable", GOSSIP_SENDER_MAIN, 12);
-						}
-						else
-						{
-							AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Passer l'introduction du Chevalier de la mort\n•ce choix est irrévocable", GOSSIP_SENDER_MAIN, 12);
-						}
-						AddGossipItemFor(player, GOSSIP_ICON_INTERACT_2, "Annuler", GOSSIP_SENDER_MAIN, 13);
-					}
-					else
-					{	
-				        if (player->GetQuestStatus(30002) == QUEST_STATUS_NONE)
-						{
-						    AddGossipItemFor(player, GOSSIP_ICON_TALK, "J'ai décidé de jouer l'introduction du Chevalier de la mort.", GOSSIP_SENDER_MAIN, 13);
-						    //Message "Vous êtes engagé dans l'introduction du Chevalier de la mort et ne pouvez plus la passer."
-						    std::ostringstream ss;
-						    ss << "|cffFF8000Liche passeuse :|cFFBDB76B Vous avez décidé de jouer l'introduction du Chevalier de la mort et ne pouvez plus la passer.";
-						    ChatHandler(player->GetSession()).SendSysMessage(ss.str().c_str());
-						}
-						else
-						{
-							AddGossipItemFor(player, GOSSIP_ICON_TALK, "J'ai déja passé l'introduction du Chevalier de la mort.", GOSSIP_SENDER_MAIN, 13);
-						    //Message "Vous avez déja passé l'introduction du Chevalier de la mort et ne pouvez plus la passer."
-						    std::ostringstream ss;
-						    ss << "|cffFF8000Liche passeuse :|cFFBDB76B Vous avez déja passé l'introduction du Chevalier de la mort.";
-						    ChatHandler(player->GetSession()).SendSysMessage(ss.str().c_str());
-						}
-					}						
-											
-				}
-				else
-				{
-					AddGossipItemFor(player, GOSSIP_ICON_TALK, "Je ne suis pas un Chevalier de la mort.", GOSSIP_SENDER_MAIN, 13);
-					//Message "Vous n'êtes pas un Chevalier de la mort."
-					std::ostringstream ss;
-					ss << "|cffFF8000Liche passeuse :|cFFBDB76B Vous n'êtes pas un Chevalier de la mort.";
-					ChatHandler(player->GetSession()).SendSysMessage(ss.str().c_str());
-				}					
+				AddGossipItemFor(player, GOSSIP_ICON_INTERACT_1, "Passer l'introduction du Chevalier de la mort\n•ce choix est irrévocable", GOSSIP_SENDER_MAIN, 12);
+				AddGossipItemFor(player, GOSSIP_ICON_INTERACT_2, "Annuler", GOSSIP_SENDER_MAIN, 13);											
                 SendGossipMenuFor(player, player->GetGossipTextId(creature), creature->GetGUID());
                 break;
 
             case 12:
-			/*********TODO :
-			-compléter TOUTES les queêtes de la zone de départ DK pour recevoir les points de talents
-				-vérifier si les sorts sont également appris de cette façon, peut-être que l'xp est obtenue -> ajuster le player->SetLevel() en conséquence
-			-gérer les menus de la liche pour téléporter le joueur si il a passé la zone (éviter d'avoir une première option "Je souhaite passer" et ensuite "J'ai déja passé" ou "Je ne seuis pas DK" : gérer la première option pour ça)
-				-script en deux étapes : le joueur souhaite passer la zone alors on valide les quetes, niveaux, récompenses, sorts, etc... PUIS on le téléporte dans un second temps
-					cela devrait éviter que l'écran de chargement du changement de zone empêche l'interface de récupérer correctement les informations de ce que le script ajoute au personnage
-			
+			/*
+			TODO :
+			-compléter TOUTES les quêtes de la zone de départ DK pour recevoir les points de talents
+				-vérifier si les sorts sont également appris de cette façon, peut-être que l'xp est obtenue
+				    -ajuster le player->SetLevel() en conséquence
+					-attribuer les objets rémanents
+					-apprendre les sorts qui ne le sont pas (automatiquement) en récompense de quête
+			-gérer les menus de la liche pour éviter d'avoir une première option "Je souhaite passer" et ensuite "J'ai déja passé" ou "Je ne seuis pas DK" (la première option doit gérer ça ? ou pas de menu si non nécessaire)			
 			*/
-                if (player->getLevel() <= DKL)
-                {
-                    player->SetLevel(DKL);
-                }
                 player->learnSpell(53428, false);//runeforging
                 player->learnSpell(53441, false);//runeforging
                 player->learnSpell(53344, false);//runeforging
@@ -201,13 +167,18 @@ public:
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);  
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(13189), false, player);
                 }*/
-                CloseGossipMenuFor(player);				
+                if (player->getLevel() < DKL)
+                {
+                    player->SetLevel(DKL);
+                }				
+                CloseGossipMenuFor(player);
+				ClearGossipMenuFor(player);				
                 ObjectAccessor::SaveAllPlayers();//Save
-				//player->GetSession()->LogoutPlayer(true);//Logout forces ui to be fully (re)loaded at logback. COMMENT TO TEST IF NO TELEPORT ALLOWS UI TO CORRECTLY LOAD ITEMS
                 break;
 
             case 13://close
-                CloseGossipMenuFor(player);								
+                CloseGossipMenuFor(player);
+				ClearGossipMenuFor(player);								
                 break;
 
             default:
