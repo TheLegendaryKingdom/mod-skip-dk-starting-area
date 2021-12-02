@@ -166,18 +166,28 @@ public:
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);  
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(13189), false, player);
                 }*/
-                /*if (player->getLevel() < DKL)
+                /*if (player->getLevel() < 58)
                 {
-                    player->SetLevel(DKL);
-                }*/				
+                    player->SetLevel(58);
+                }*/
+                while (player->getLevel() < 58)
+				{
+					player->GiveLevel(1);
+				}					
                 CloseGossipMenuFor(player);
 				ClearGossipMenuFor(player);				
                 ObjectAccessor::SaveAllPlayers();//Save
                 break;
 
-            case 13://close
-                CloseGossipMenuFor(player);
-				ClearGossipMenuFor(player);								
+            case 13://close		
+			
+				ClearGossipMenuFor(player);
+				if (creature->IsQuestGiver())
+				{
+					player->PrepareQuestMenu(creature->GetGUID());
+				}
+                AddGossipItemFor(player, GOSSIP_ICON_TALK, "Je souhaite sauter la série de quêtes de démarrage du Chevalier de la mort.", GOSSIP_SENDER_MAIN, 11);											
+                SendGossipMenuFor(player, player->GetGossipTextId(creature), creature->GetGUID());								
                 break;
 
             default:
