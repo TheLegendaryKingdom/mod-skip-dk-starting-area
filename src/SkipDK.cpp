@@ -151,12 +151,7 @@ public:
                     player->AddQuest(sObjectMgr->GetQuestTemplate(12801), nullptr);
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(12801), false, player);
                 }
-				if (player->GetQuestStatus(30003) == QUEST_STATUS_NONE)//Quitter les lieux
-                {
-                    player->AddQuest(sObjectMgr->GetQuestTemplate(30003), nullptr);
-					player->CompleteQuest(30003);
-                }
-                /*if (player->GetTeamId() == TEAM_ALLIANCE && player->GetQuestStatus(13188) == QUEST_STATUS_NONE)//Where Kings Walk
+                if (player->GetTeamId() == TEAM_ALLIANCE && player->GetQuestStatus(13188) == QUEST_STATUS_NONE)//Where Kings Walk
                 {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13188), nullptr);
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(13188), false, player);
@@ -165,21 +160,23 @@ public:
                 {
                     player->AddQuest(sObjectMgr->GetQuestTemplate(13189), nullptr);  
                     player->RewardQuest(sObjectMgr->GetQuestTemplate(13189), false, player);
-                }*/
-                /*if (player->getLevel() < 58)
+                }
+                if (player->getLevel() < 58)
                 {
-                    player->SetLevel(58);
-                }*/
-                while (player->getLevel() < 58)
-				{
-					player->GiveLevel(1);
-				}					
+					player->GiveLevel(58);
+                  //player->SetLevel(58);
+                }
+				if (player->GetQuestStatus(30003) == QUEST_STATUS_NONE)//Quitter les lieux
+                {
+                    player->AddQuest(sObjectMgr->GetQuestTemplate(30003), nullptr);
+					player->CompleteQuest(30003);
+                }				
                 CloseGossipMenuFor(player);
 				ClearGossipMenuFor(player);				
                 ObjectAccessor::SaveAllPlayers();//Save
                 break;
 
-            case 13://close		
+            case 13://cancel, go back (previous menu)	
 			
 				ClearGossipMenuFor(player);
 				if (creature->IsQuestGiver())
