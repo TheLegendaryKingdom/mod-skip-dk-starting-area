@@ -60,22 +60,25 @@ public:
 					}
 					else if (player->GetQuestStatus(30002) != QUEST_STATUS_NONE && player->GetQuestStatus(30003) == QUEST_STATUS_REWARDED)//Passer l'introduction du Chevalier de la mort //Quitter les lieux
 					{
-						std::ostringstream ss;
+						/*std::ostringstream ss;
 						ss << "|cffFF8000Liche passeuse :|cFFBDB76B Vous avez passé l'introduction du Chevalier de la mort.";
-						ChatHandler(player->GetSession()).SendSysMessage(ss.str().c_str());							
+						ChatHandler(player->GetSession()).SendSysMessage(ss.str().c_str());*/
+						creature->Whisper("Vous avez passé l'introduction du Chevalier de la mort.", LANG_UNIVERSAL, player);
 					}
 					else if (player->GetQuestStatus(30009) == QUEST_STATUS_REWARDED && player->GetQuestStatus(30003) == QUEST_STATUS_NONE)
 					{
-						std::ostringstream ss;
+						/*std::ostringstream ss;
 						ss << "|cffFF8000Liche passeuse :|cFFBDB76B Vous avez décidé de jouer l'introduction du Chevalier de la mort et ne pouvez plus la passer.";
-						ChatHandler(player->GetSession()).SendSysMessage(ss.str().c_str());
+						ChatHandler(player->GetSession()).SendSysMessage(ss.str().c_str());*/
+						creature->Whisper("Vous avez décidé de jouer l'introduction du Chevalier de la mort et ne pouvez plus la passer.", LANG_UNIVERSAL, player);
 					}                    					
 				}
 				else
 				{
-					std::ostringstream ss;
+					/*std::ostringstream ss;
 					ss << "|cffFF8000Liche passeuse :|cFFBDB76B Je ne propose mes services qu'aux Chevaliers de la mort.";
-					ChatHandler(player->GetSession()).SendSysMessage(ss.str().c_str());
+					ChatHandler(player->GetSession()).SendSysMessage(ss.str().c_str());*/
+						creature->Whisper("Je ne propose mes services qu'aux Chevaliers de la mort.", LANG_UNIVERSAL, player);
 				}
             }
             player->TalkedToCreature(creature->GetEntry(), creature->GetGUID());
